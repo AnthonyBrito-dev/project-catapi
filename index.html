@@ -7,9 +7,9 @@
 		<title>Project Cat API</title>
 	</head>
 	<body>
-		<header id="header" class="">
-			<figure id="logotipo" class="">
-				<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="64.000000pt" height="64.000000pt" viewBox="0 0 64.000000 64.000000" preserveAspectRatio="xMidYMid meet">
+		<header id="header" class="flex items-center p-5 bg-cpink shadow-lg shadow-black/40 *:text-cbrown">
+			<figure id="logotipo" class="flex items-center gap-3">
+				<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="40.000000pt" height="64.000000pt" viewBox="0 0 64.000000 64.000000" preserveAspectRatio="xMidYMid meet">
 				<g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)" fill="rgb(77, 64, 44)" stroke="none">
 				<path d="M577 618 c-2 -7 -10 -46 -17 -85 -7 -40 -17 -73 -21 -73 -15 0 -44
 				53 -41 73 11 62 -38 93 -98 62 -21 -11 -42 -14 -66 -9 -35 6 -36 6 -29 -17 11
@@ -33,21 +33,17 @@
 				-6 29 -5 31 16 27 13 -2 37 3 53 11 34 18 45 19 63 7z"/>
 				</g>
 				</svg>
-				<a href="index.html" class="">Fav Cats</a>
+				<a href="index.html" class="font-bold max-w-3.5">Favorite Cats</a>
 			</figure>
-			<div id="enlaces">
+			<nav id="enlaces" class="ml-auto *:font-medium flex gap-4">
 				<a href="index.html">Home</a>
-				<a href="#">Favorites</a>
-			</div>
+				<a href="favorites.html">Favorites</a>
+			</nav>
 		</header>
 
 		<main id="container">
-			<section id="filters">
-
-			</section>
-			<section id="image-cats">
-
-			</section>
+			<section id="filters"></section>
+			<section id="image-cats" class="m-3 p-2 rounded-2xl bg-cbluelight"></section>
 		</main>
 		
 		<script type="module" src="src/js/main.js"></script>

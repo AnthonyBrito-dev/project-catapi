@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+@theme{
+    --color-cpink: rgb(245, 239, 220);
+    --color-cbrown: rgb(77, 64, 44);
+    --color-cbluelight: rgb(176, 213, 232);
+    --color-cgreenlight: rgb(183, 232, 208);
+}
