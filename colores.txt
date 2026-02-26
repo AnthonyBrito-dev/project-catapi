@@ -1,4 +1,0 @@
-marron = rgb(77, 64, 44)
-rosa = rgb(245, 239, 220)
-celeste = rgb(176, 213, 232)
-verde = rgb(183, 232, 208)
