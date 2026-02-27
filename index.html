@@ -41,9 +41,19 @@
 			</nav>
 		</header>
 
-		<main id="container">
-			<section id="filters"></section>
-			<section id="image-cats" class="m-3 p-2 rounded-2xl bg-cbluelight"></section>
+		<main id="container" class="flex flex-col justify-center items-center ml-8 mr-8 mb-8">
+			<section id="filters" class="m-8 pt-3 pb-3 pl-8 pr-8 rounded-2xl bg-cbluelight">
+				<label for="" id="lb-razas" class="text-cbrown">Razas</label>
+				<select name="raza" id="raza" class="p-2">
+					<img src="src/img/arrow-down.svg" alt="">
+				</select>
+			</section>
+			
+			<section id="image-cats" class="flex flex-wrap items-center justify-around mb-10 *:rounded-2xl *:w-30 *:h-30 *:shadow-xl/80"></section>		
+			
+			<div id="button" class="flex justify-center content-center">
+				<button id="see-more" class="bg-cgreenlight text-cbrown rounded-2xl flex pb-2 pt-2 pl-4 pr-4 ">Ver mas</button>
+			</div>
 		</main>
 		
 		<script type="module" src="src/js/main.js"></script>
