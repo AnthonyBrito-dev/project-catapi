@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="img/gato-toyger.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Project Cat API</title>
+        <link rel="stylesheet" href="src/css/style.css">
+	</head>
+	<body>
+		<header id="header" class="flex items-center p-5 bg-cpink shadow-lg shadow-black/40 *:text-cbrown">
+			<figure id="logotipo" class="flex items-center gap-3">
+				<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="40.000000pt" height="64.000000pt" viewBox="0 0 64.000000 64.000000" preserveAspectRatio="xMidYMid meet">
+				<g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)" fill="rgb(77, 64, 44)" stroke="none">
+				<path d="M577 618 c-2 -7 -10 -46 -17 -85 -7 -40 -17 -73 -21 -73 -15 0 -44
+				53 -41 73 11 62 -38 93 -98 62 -21 -11 -42 -14 -66 -9 -35 6 -36 6 -29 -17 11
+				-35 41 -121 49 -141 6 -13 0 -22 -25 -37 -65 -40 -129 -151 -129 -223 0 -63
+				-66 -79 -121 -30 l-31 27 21 58 c16 48 17 59 6 63 -20 8 -33 -2 -55 -46 -29
+				-57 -26 -94 13 -135 41 -45 125 -75 209 -75 40 -1 70 -6 82 -15 22 -17 171
+				-21 181 -6 9 15 -23 40 -66 51 -32 9 -39 15 -34 28 4 9 12 29 17 45 5 15 14
+				27 19 27 5 0 25 -33 43 -74 29 -64 38 -75 65 -81 54 -12 65 9 28 49 -18 19
+				-27 47 -36 110 l-13 84 28 49 c16 26 37 55 48 64 15 13 20 36 27 123 6 70 5
+				115 -2 127 -11 21 -44 26 -52 7z m34 -109 c-4 -97 -19 -165 -29 -124 -2 11 -8
+				25 -13 30 -11 15 22 196 35 192 7 -3 10 -37 7 -98z m-143 72 c25 -15 10 -55
+				-25 -66 -49 -16 -53 -27 -7 -24 38 4 43 1 82 -44 46 -52 54 -95 27 -131 -13
+				-17 -15 -18 -15 -3 0 9 -4 17 -10 17 -28 0 5 -264 36 -287 18 -14 18 -14 -5
+				-11 -21 3 -32 21 -78 132 -57 138 -59 143 -69 133 -4 -4 3 -29 15 -58 12 -28
+				19 -54 15 -57 -4 -4 -9 -1 -11 6 -3 7 -15 25 -27 39 -25 29 -67 33 -117 12
+				-34 -14 -40 -35 -6 -24 53 17 92 17 109 -2 27 -31 29 -57 8 -98 -22 -44 -18
+				-53 33 -72 30 -11 28 -12 -33 -10 l-64 2 -9 37 c-5 21 -13 38 -19 38 -5 0 -7
+				-13 -3 -30 l7 -30 -54 0 c-78 0 -156 26 -195 65 -36 36 -40 62 -18 110 16 35
+				20 19 5 -21 -15 -39 3 -77 46 -97 80 -39 127 -13 138 75 9 71 55 150 107 185
+				33 22 42 24 49 13 5 -8 11 -12 15 -9 3 3 -8 35 -24 70 -16 35 -32 78 -35 95
+				-6 29 -5 31 16 27 13 -2 37 3 53 11 34 18 45 19 63 7z"/>
+				</g>
+				</svg>
+				<a href="index.html" class="font-bold max-w-3.5">Favorite Cats</a>
+			</figure>
+			<nav id="enlaces" class="ml-auto *:font-medium flex gap-4 *:hover:underline">
+				<a href="index.html">Home</a>
+				<a href="favorites.html">Favorites</a>
+			</nav>
+		</header>
+
+		<main id="container2" class="flex flex-col justify-center items-center ml-8 mr-8 mb-8">
+			<h1 class="text-cbrown font-extrabold align-middle mt-8 text-2xl">MIS FAVORITOS</h1>
+
+			<section id="filters" class="m-8 pt-3 pb-3 pl-8 pr-8 rounded-2xl bg-cbluelight">
+				<label for="" id="lb-razas" class="text-cbrown">Razas</label>
+				<select name="raza" id="raza" class="p-2">
+					<img src="src/img/arrow-down.svg" alt="">
+				</select>
+			</section>
+			
+			<section id="save-cats" class="flex flex-wrap gap-3 items-center justify-around mb-10 *:rounded-2xl *:w-30 *:h-30 *:shadow-lg/30 img-hover-group"></section>		
+			
+			<div id="button" class="flex justify-center content-center">
+				<button id="top" class="fixed right-5 bottom-5 bg-emerald-400  text-white rounded-2xl flex pb-2 pt-2 pl-4 pr-4 hover:cursor-pointer">Ir arriba</button>
+			</div>
+		</main>
+		
+		<script type="module" src="src/js/favorites.js"></script>
+	</body>
+</html>
