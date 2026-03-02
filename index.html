@@ -7,7 +7,7 @@
 		<title>Project Cat API</title>
 	</head>
 	<body>
-		<header id="header" class="flex items-center p-5 bg-cpink shadow-lg shadow-black/40 *:text-cbrown">
+		<header id="header" class="flex items-center p-5 bg-cpink shadow-lg shadow-black/40 *:text-cbrown md:pl-10 md:pr-10 xl:pl-60 xl:pr-60">
 			<figure id="logotipo" class="flex items-center gap-3">
 				<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="40.000000pt" height="64.000000pt" viewBox="0 0 64.000000 64.000000" preserveAspectRatio="xMidYMid meet">
 				<g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)" fill="rgb(77, 64, 44)" stroke="none">
@@ -42,17 +42,21 @@
 		</header>
 
 		<main id="container" class="flex flex-col justify-center items-center ml-8 mr-8 mb-8">
-			<section id="filters" class="m-8 pt-3 pb-3 pl-8 pr-8 rounded-2xl bg-cbluelight">
-				<label for="" id="lb-razas" class="text-cbrown">Razas</label>
-				<select name="raza" id="raza" class="p-2">
-					<img src="src/img/arrow-down.svg" alt="">
-				</select>
+			<section id="filters" class="flex gap-3 m-8">
+				<select name="raza" id="raza" class="active:border-none p-2 bg-cbluelight rounded-3xl pt-3 pb-3 pl-5 pr-5 hover:cursor-pointer shadow-xl"></select>
+				<button id="filtrar" class=" shadow-xl p-2 bg-cbluelight rounded-3xl pt-3 pb-3 pl-5 pr-5 hover:bg-emerald-400 hover:cursor-pointer hover:text-white">Filtrar</button>
 			</section>
 			
-			<section id="image-cats" class="flex flex-wrap gap-3 items-center justify-around mb-10 *:rounded-2xl *:w-30 *:h-30 *:shadow-lg/30 img-hover-group"></section>		
-			
+			<p class="text-2xl mb-8 font-medium text-cbrown">Click para guadar</p>
+
+			<section id="image-cats" class="flex flex-wrap gap-3 md:gap-4 xl:gap-7 items-center justify-center md:ml-2 md:mr-2 mb-10 xl:ml-35 xl:mr-35 *:rounded-2xl *:w-30 *:h-30 *:md:w-40 *:md:h-40 *:md:gap-5 *:xl:gap-7 *:xl:w-60 *:xl:h-60 *:shadow-lg/30 img-hover-group"></section>		
+
 			<div id="button" class="flex justify-center content-center">
-				<button id="see-more" class="bg-cgreenlight text-cbrown rounded-2xl flex pb-2 pt-2 pl-4 pr-4 hover:bg-emerald-400 hover:cursor-pointer">Ver mas</button>
+				<button id="see-more" class="bg-cgreenlight text-cbrown rounded-2xl flex pb-2 pt-2 pl-4 pr-4 hover:bg-emerald-400 hover:cursor-pointer hover:text-white">Ver mas</button>
+			</div>
+
+			<div id="button-top" class="flex justify-center content-center">
+				<button id="top-main" class="fixed right-5 bottom-5 bg-cbluelight hover:bg-emerald-400 hover:text-white rounded-2xl flex pb-2 pt-2 pl-4 pr-4 hover:cursor-pointer">Ir arriba</button>
 			</div>
 		</main>
 		
