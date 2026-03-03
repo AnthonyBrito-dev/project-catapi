@@ -41,10 +41,15 @@
 			</nav>
 		</header>
 
-		<main id="container" class="flex flex-col justify-center items-center ml-8 mr-8 mb-8">
-			<section id="filters" class="flex gap-3 m-8">
-				<select name="raza" id="raza" class="active:border-none p-2 bg-cbluelight rounded-3xl pt-3 pb-3 pl-5 pr-5 hover:cursor-pointer shadow-xl"></select>
-				<button id="filtrar" class=" shadow-xl p-2 bg-cbluelight rounded-3xl pt-3 pb-3 pl-5 pr-5 hover:bg-emerald-400 hover:cursor-pointer hover:text-white">Filtrar</button>
+		<main id="container" class="flex flex-col justify-center items-center ml-2 mr-2 mb-8">
+			<section id="filters" class="grid grid-cols-2 grid-rows-2 gap-3 mt-7 mb-7 bg-cgreenlight p-3 rounded-lg">
+				<div class="col-span-2 text-center">
+					<h1 class="mt-2 mb-2 text-shadow-lg text-xl font-medium text-cbrown">Filtrar por raza</h1>
+				</div>
+				<select name="raza" id="raza" class="row-start-2 active:border-none bg-white rounded-3xl pt-1 pb-1 pl-5 pr-5 hover:cursor-pointer shadow-xl">
+					<option value="">Todas</option>
+				</select>
+				<button id="filtrar" class="row-start-2 shadow-xl p-2 bg-white rounded-3xl pt-1 pb-1 pl-1 pr-1 hover:bg-emerald-400 hover:cursor-pointer hover:text-white">Filtrar</button>
 			</section>
 			
 			<p class="text-2xl mb-8 font-medium text-cbrown">Click para guadar</p>

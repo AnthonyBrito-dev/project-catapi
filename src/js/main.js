@@ -4,7 +4,6 @@ import '../css/style.css'
 let sectionImgs = document.getElementById("image-cats")
 
 //Guardamos la clave api junto con la url de las imagenes random
-const url = 'https://api.thecatapi.com/v1/images/search?limit=8';
 const urlBreeds = "https://api.thecatapi.com/v1/breeds"
 const apiKey = "live_MsxjduVoc1Sbf8OrksE0P0deyGiiSZcLAw0mYAa02Y3DsUy7zF2KnlL9qvcX99ps"
 
@@ -13,14 +12,10 @@ let verMas = async (breed="")=> {fetch( `https://api.thecatapi.com/v1/images/sea
 	{headers: {
       	'x-api-key': apiKey
     }})
-.then((response) => {
-	if (response.status == "pending") {
-		console.log("cargando")
-	} else {
+	.then((response) => {
 		return response.json();
-	}
- })
-.then((data) => {   //Con los datos que pasa la respuesta iteramos por cada imagen
+	})
+	.then((data) => {   //Con los datos que pasa la respuesta iteramos por cada imagen
   	let imagesData = data;
   	imagesData.map((imageData) => {
     
@@ -55,30 +50,23 @@ let verMas = async (breed="")=> {fetch( `https://api.thecatapi.com/v1/images/sea
 		}, 2000)
 	})	
     });
-}) //Si ocurre algun error lo añadimos a la consola POR AHORA
+}) //Si ocurre algun error lo añadimos al section con un parrafo
 .catch(function(error) {
-   console.log(error);
+   let errorApi = document.createElement("p")
+   errorApi.textContent = `Ha ocurrido este error: \n(${error}) intentalo mas tarde.`
+   errorApi.style.boxShadow = "none"
+   errorApi.style.maxWidth = "mincontent"
+   errorApi.style.marginBottom = "20px"
+   sectionImgs.appendChild(errorApi)
 })};
 
 //Llamamos a la funcion para que inicialmente se muestren las imagenes
 verMas();
 
-/*Añadimos funcionalidad al boton ver mas para que al hacer click en él, se vuelva
-a ejecutar la funcion ver mas*/
-let buttonSee = document.getElementById("see-more")
-buttonSee.addEventListener("click", ()=>{
-  	verMas()
-})
+//Añadimos evento para cambiar la variable a la raza especificada
+let selectRaza = ""
 
-//Añadimos un scroll hacia arriba 
-let buttonTop = document.getElementById("top-main");
-buttonTop.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-});
-
+//Colocamos todas las razas para la etiqueta select
 let select = document.getElementById("raza")
 let selectFiltro = async () => {
 	let buscar = fetch(urlBreeds, {headers: {
@@ -98,9 +86,8 @@ let selectFiltro = async () => {
 }
 selectFiltro()
 
-//Añadimos evento para cambiar la variable a la raza especificada
-let selectRaza = ""
-
+/*Creamos evento para agregar el valor con el id de la raza y 
+añadimos eso a la variable selectRaza*/ 
 select.addEventListener("click", ()=>{
 	selectRaza = select.value
 })
@@ -109,15 +96,30 @@ select.addEventListener("click", ()=>{
 let buttonfiltrar = document.getElementById("filtrar")
 buttonfiltrar.addEventListener("click", ()=>{
 	let specificBreed = async () => {
-		/*let buscarImg = fetch(`https://api.thecatapi.com/v1/images/search?limit=8&breed_ids=${selectRaza}&api_key=${apiKey}`, {headers: {
-			'x-api-key': apiKey
-		}})
-
-		let buscarImagenesRaza = await buscarImg
-		let buscarImgRazaJson = await buscarImagenesRaza.json()*/
 		sectionImgs.innerHTML = ""
 		verMas(selectRaza)
 	}
 
 	specificBreed()
 })
+
+
+/*Añadimos funcionalidad al boton ver mas para que al hacer click en él, se vuelva
+a ejecutar la funcion ver mas*/
+let buttonSee = document.getElementById("see-more")
+buttonSee.addEventListener("click", ()=>{
+  	verMas(selectRaza)
+})
+
+//Añadimos un scroll hacia arriba 
+export const irArriba = function(){
+	let buttonTop = document.getElementById("top-main");
+	buttonTop.addEventListener("click", () => {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth"
+		});
+	});
+}
+
+irArriba()

@@ -9,20 +9,19 @@ let colocarImgs = ()=> {
     /*Iteramos por el localStorage para agregar las etiquetas de 
     imagenes al section*/
     for (let i = 0; i < total; i++) {
-		const clave = localStorage.key(i);
+        const clave = localStorage.key(i);
 		let imgFavorite = document.createElement("img")
 		imgFavorite.src = localStorage.getItem(`${clave}`)
 		sectionImgFavorites.appendChild(imgFavorite)
-        console.log(localStorage.getItem(`${clave}`))
-
+        
 		//Con doble click eliminamos la imagen de favoritos
 		imgFavorite.addEventListener("dblclick", ()=>{
-			localStorage.removeItem(clave)
+            localStorage.removeItem(clave)
 			sectionImgFavorites.removeChild(imgFavorite)
-
+            
             //Seleccionamos el contenedor 
             let containerFavs = document.getElementById("container-favs")
-
+            
             //Creamos un parrafo para mostrar que se ha guardado y le damos estilo 
             let p = document.createElement("p")
             p.textContent = "Eliminado exitosamente"
@@ -38,7 +37,7 @@ let colocarImgs = ()=> {
             p.style.paddingRight = "20px"
             p.style.maxWidth = "mincontent"
             p.style.borderRadius = "5px"
-
+            
             //Agregamos el parrafo y se elimina despues de 2 seg
             containerFavs.appendChild(p)
             let tiempo = setInterval(()=>{
