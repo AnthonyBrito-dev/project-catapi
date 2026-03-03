@@ -2,20 +2,24 @@ import '../css/style.css'
 
 //Seleccionamos el section al que se le pasan las imagenes random
 let sectionImgs = document.getElementById("image-cats")
+let buttonSee = document.getElementById("see-more")
 
 //Guardamos la clave api junto con la url de las imagenes random
 const urlBreeds = "https://api.thecatapi.com/v1/breeds"
 const apiKey = "live_MsxjduVoc1Sbf8OrksE0P0deyGiiSZcLAw0mYAa02Y3DsUy7zF2KnlL9qvcX99ps"
 
 //Pedimos las imgs al servidor
-let verMas = async (breed="")=> {fetch( `https://api.thecatapi.com/v1/images/search?limit=8&breed_ids=${breed}&api_key=${apiKey}`, 
+let verMas = async (breed="")=> {
+	buttonSee.textContent = "cargando..."
+	await fetch( `https://api.thecatapi.com/v1/images/search?limit=8&breed_ids=${breed}&api_key=${apiKey}`, 
 	{headers: {
       	'x-api-key': apiKey
     }})
 	.then((response) => {
+		buttonSee.textContent = "Ver Mas"
 		return response.json();
 	})
-	.then((data) => {   //Con los datos que pasa la respuesta iteramos por cada imagen
+	.then((data) => { //Con los datos que pasa la respuesta iteramos por cada imagen
   	let imagesData = data;
   	imagesData.map((imageData) => {
     
@@ -106,7 +110,6 @@ buttonfiltrar.addEventListener("click", ()=>{
 
 /*Añadimos funcionalidad al boton ver mas para que al hacer click en él, se vuelva
 a ejecutar la funcion ver mas*/
-let buttonSee = document.getElementById("see-more")
 buttonSee.addEventListener("click", ()=>{
   	verMas(selectRaza)
 })

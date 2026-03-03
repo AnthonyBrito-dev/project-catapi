@@ -1,7 +1,7 @@
 # Propuesta 3: CatGallery con The Cat API
 api: https://thecatapi.com/
 
-### Objetivo del Ejercicio
+### Objetivo del Proyecto
 
 ● Practicar peticiones a una API REST usando fetch (o tu biblioteca preferida, como Axios).
 
@@ -55,8 +55,3 @@ página, se cargan más imágenes automáticamente.
 
 ● Agrega un formulario con selectores para razas, o checkboxes para el tipo de archivo, para refinar
 la búsqueda.
-
-### 6 (Opcional) Información Extra
-
-● Cada imagen de gato a veces contiene metadatos sobre la raza o su historia. Muestra datos como
-“breed name”, “temperament”, “origin” en un modal emergente o en un recuadro aparte.

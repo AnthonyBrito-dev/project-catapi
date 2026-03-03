@@ -51,7 +51,7 @@ let colocarImgs = ()=> {
 colocarImgs()
 
 //Añadimos un scroll hacia arriba 
-let buttonTop = document.getElementById("top");
+let buttonTop = document.getElementById("top-favs");
 buttonTop.addEventListener("click", () => {
     window.scrollTo({
         top: 0,
